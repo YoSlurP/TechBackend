@@ -1,13 +1,16 @@
 import express from "express"
 import cors from "cors"
 import mysql from "mysql2/promise"
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const con = await mysql.createConnection({
-    host:process.env.VITE_DB_HOST,
-    port:process.env.VITE_DB_PORT,
-    database:process.env.VITE_DB_DATABASE,
-    user:process.env.VITE_DB_USER,
-    password:process.env.VITE_DB_PASSWORD
+    host:process.env.DB_HOST,
+    port:process.env.DB_PORT,
+    database:process.env.DB_DATABASE,
+    user:process.env.DB_USER,
+    password:process.env.DB_PASSWORD
 });
 
 const app = express();
