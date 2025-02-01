@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(cors());
 
 async function getuzenet(req,res) {
-    let sql = "select az, uzenet, uaz, saz,cim,date from ticket";
+    let sql = "select az, uzenet, uaz, saz,cim,date from tickets";
     try{
         const [ json ] = await con.query(sql);
         res.send(json);
@@ -27,7 +27,7 @@ async function getuzenet(req,res) {
 async function adduzenet(req,res) {
     if(req.body.cim&&req.body.uzenet&&req.body.uaz&&req.body.saz){
          try{
-            let sql=`insert into ticket set cim="${req.body.cim}", uzenet="${req.body.uzenet}",uaz="${req.body.uaz}", saz="${req.body.saz},taz=${req.body.taz}"`;
+            let sql=`insert into tickets set cim="${req.body.cim}", uzenet="${req.body.uzenet}",uaz="${req.body.uaz}", saz="${req.body.saz},taz=${req.body.taz}"`;
             console.log(sql)
             const resp = await con.query(sql); 
             res.status(200).send("OK");
@@ -35,7 +35,11 @@ async function adduzenet(req,res) {
     }else res.status(400).send({ error:"Hibás paraméterek!" });
 }
 async function getadmin(req,res) {
-    
+    let sql = "select saz, id from admin";
+    try{
+        const [ json ] = await con.query(sql);
+        res.send(json);
+    }catch(err){res.status(500).send({error:err});}
 }
 
 
