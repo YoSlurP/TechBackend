@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import mysql from "mysql2/promise"
 import dotenv from 'dotenv';
+import { adminRouter } from "./routes/index.js";
 dotenv.config();
 
 
@@ -16,6 +17,7 @@ const con = await mysql.createConnection({
 const app = express();
 app.use(express.json())
 app.use(cors());
+app.use("/admin",adminRouter)
 
 async function getuzenet(req,res) {
     let sql = "select az, uzenet, uaz, saz,cim,date from tickets";
@@ -25,7 +27,7 @@ async function getuzenet(req,res) {
     }catch(err){res.status(500).send({error:err});}
 }
 async function adduzenet(req,res) {
-    if(req.body.cim&&req.body.uzenet&&req.body.uaz&&req.body.saz){
+    if(req.body.cim&&req.body.uzenet&&req.body.uaz){
          try{
             let sql=`insert into tickets set cim="${req.body.cim}", uzenet="${req.body.uzenet}",uaz="${req.body.uaz}", saz="${req.body.saz},taz=${req.body.taz}"`;
             console.log(sql)
