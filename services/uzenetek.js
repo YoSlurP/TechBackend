@@ -30,10 +30,10 @@ export class UzenetekService{
         const adminId=admins[adminIndex].id
 
         const uzenetId=v4();
-        const uzenetSql=`INSERT INTO uzenetek (id,uzenet, cim, adminId, userId) VALUES ('${uzenetId}','${uzenet}', '${cim}', '${adminId}', '${userId}');`
-        const uzenetReturn=`SELECT * FROM uzenetek WHERE id = '${uzenetId}';`
-        await connection.execute(uzenetSql);
-        const [rows] = await connection.execute(uzenetReturn)
+        const uzenetSql=`INSERT INTO uzenetek (id,uzenet, cim, adminId, userId) VALUES (?, ?, ?, ?, ?);`
+        const uzenetReturn=`SELECT * FROM uzenetek WHERE id = ?;`
+        await connection.execute(uzenetSql,[uzenetId],[uzenet],[cim],[adminId],[userId]);
+        const [rows] = await connection.execute(uzenetReturn,[uzenetId])
         await connection.end();
         return {
             id: rows[0].id,
