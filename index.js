@@ -2,7 +2,8 @@ import express from "express"
 import cors from "cors"
 import mysql from "mysql2/promise"
 import dotenv from 'dotenv';
-import { adminRouter } from "./routes/index.js";
+import { adminRouter,uzenetekRouter } from "./routes/index.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
 dotenv.config();
 
 
@@ -18,6 +19,8 @@ const app = express();
 app.use(express.json())
 app.use(cors());
 app.use("/admin",adminRouter)
+app.use("/uzenetek",uzenetekRouter)
+app.use(errorHandler);
 
 async function getuzenet(req,res) {
     let sql = "select az, uzenet, uaz, saz,cim,date from tickets";

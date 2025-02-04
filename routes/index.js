@@ -1,2 +1,3 @@
 import { adminRouter } from "./admin.js";
-export { adminRouter };
+import { uzenetekRouter } from "./uzenetek.js";
+export { adminRouter, uzenetekRouter };

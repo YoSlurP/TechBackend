@@ -1,2 +1,3 @@
 import { AdminController } from "./admin.js";
-export {AdminController};
+import { UzenetekController } from "./uzenetek.js";
+export {AdminController,UzenetekController};

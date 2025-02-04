@@ -1,2 +1,3 @@
 import { AdminService } from "./admin.js";
-export { AdminService };
+import { UzenetekService } from "./uzenetek.js";
+export { AdminService,UzenetekService };
