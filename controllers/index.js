@@ -1,3 +1,4 @@
 import { AdminController } from "./admin.js";
 import { UzenetekController } from "./uzenetek.js";
-export {AdminController,UzenetekController};
+import { ValaszokController } from "./valaszok.js";
+export { AdminController, UzenetekController, ValaszokController };
