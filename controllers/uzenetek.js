@@ -51,4 +51,16 @@ export class UzenetekController {
       next(error);
     }
   };
+  getAdminUzenetek=async(req,res,next)=>{
+    try {
+      const adminId=req.get("x-user-id")
+      if(!adminId){
+        throw new BadRequestError("Nincs adminId");
+      }
+      const uzenet = await this.uzenetekService.getAdminUzenetek(adminId);
+      res.status(200).send({ data: uzenet });
+    } catch (error) {
+      next(error)
+    }
+  }
 }

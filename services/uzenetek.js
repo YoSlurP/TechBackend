@@ -67,4 +67,21 @@ export class UzenetekService {
       valasz: rows[0].valasz || null,
     };
   }
+  async getAdminUzenetek(adminId) {
+    const connection = await getConnection();
+    const uzenetSql = `SELECT uzenetek.*,valasz.valasz FROM uzenetek LEFT JOIN valasz ON uzenetek.id=valasz.uzenetId WHERE uzenetek.adminId=?`;
+    const [rows] = await connection.execute(uzenetSql, [adminId]);
+    await connection.end();
+    const adminUzenetek = rows.map((row) => {
+      return {
+        id: row.id,
+        uzenet: row.uzenet,
+        cim: row.cim,
+        created_at: row.date,
+        isAnswered: !!row.valasz,
+        valasz: row.valasz || null,
+      };
+    });
+    return adminUzenetek;
+  }
 }
