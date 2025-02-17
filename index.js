@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/admin", adminRouter);
 app.use("/uzenetek", uzenetekRouter);
-app.get("/health", (req, res) => res.status(202).send("Alive"));
+app.get("/health", (req, res) => res.status(201).send("Alive"));
 app.use(errorHandler);
 
 app.listen(88, (error) => {
