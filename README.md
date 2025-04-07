@@ -1,6 +1,10 @@
-# Tech Support Backend
+# Tech Support
 
 Ez a backend a Tech Support weboldalnak, amely JavaScript nyelven készült. A projekt célja, hogy alapvető backend szolgáltatásokat biztosítson, mint például adatkezelés, API útvonalak és middleware-k.
+
+## Célja, funkciója
+
+Főbb célja hogy a Tech Support frontendel kommunikáljon. Ticketek nyitása, menedzselése és zárásával foglalkozik legfőkébb. Emellett a Tech Support adminokat is feljegyzi, egy új ticketkor random adja oda az egyik Adminnak a kérdést. Az adminok erre válaszolni tudnak. Ezek mind API kéréseken keresztül történnek. A rendszer támogatja a ticketek állapotának frissítését, valamint lehetőséget biztosít a kérdések és válaszok könnyed kezelésére API kérés segítségével.
 
 ## Telepítés
 
