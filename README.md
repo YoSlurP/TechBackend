@@ -1,4 +1,4 @@
-# Tech Support
+# Tech Support - Fejlesztés alatt
 
 Ez a backend a Tech Support weboldalnak, amely JavaScript nyelven készült. A projekt célja, hogy alapvető backend szolgáltatásokat biztosítson, mint például adatkezelés, API útvonalak és middleware-k.
 
