@@ -2,9 +2,9 @@ import {test,describe,expect} from "vitest"
 
 describe("GET /uzenetek/:id",()=>{
     test("/uzenetek/:id",async()=>{
-        const res = await fetch("https://techbackend-app4.onrender.com/uzenetek/025f4bb3-e0d4-4953-909b-4d6e3250fd30",{headers:{"x-user-id":"6noKD1wxDjNcKm6kih9Ee1OBcx72"}})
+        const res = await fetch("https://techbackend-app4.onrender.com/uzenetek/6dac8111-e09b-4c4a-b8a1-8de94a1aea07",{headers:{"x-user-id":"6noKD1wxDjNcKm6kih9Ee1OBcx72"}})
         const json= await res.json()
-        expect(json.data.uzenet).toBe("Mukszik?")
+        expect(json.data.uzenet).toBe("Csak tesztre kell")
     }),
     test("/uzenetek/:id",async()=>{
         const res = await fetch("https://techbackend-app4.onrender.com/uzenetek/025f4bb3-e0d-d234nz456sfd-909b-4d6e3250fd30",{headers:{"x-user-id":"6noKD1wxDjNcKK5478DFH3ih9Ee1OBcx72"}})
@@ -45,7 +45,7 @@ describe("GET /admin/uzenetek",()=>{
 })
 describe("POST /admin/valaszok/:id",()=>{
     test("/admin/valaszok/:id",async()=>{
-        const res = await fetch("https://techbackend-app4.onrender.com/admin/valaszok/8f381949-2a6e-4163-ab11-2b0657c61919",{
+        const res = await fetch("https://techbackend-app4.onrender.com/admin/valaszok/fb7b42f5-115c-495b-99c8-884f5e3c5150",{
             method:"POST",
             headers:{"x-user-id":"lS3lELyBRRVYuYNfNdw8y6spDXW2","Content-Type":"application/json"},
             body:JSON.stringify({valasz:"Nincs"})
