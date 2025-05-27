@@ -1,39 +1,39 @@
-# Tech Support - Fejlesztés alatt
+# Tech Support – Under Development
 
-Ez a backend a Tech Support weboldalnak, amely JavaScript nyelven készült. A projekt célja, hogy alapvető backend szolgáltatásokat biztosítson, mint például adatkezelés, API útvonalak és middleware-k.
+This is the backend for the Tech Support website, developed in JavaScript. The goal of this project is to provide core backend functionalities such as data handling, API routes, and middleware.
 
-## Célja, funkciója
+## Purpose and Functionality
 
-Főbb célja hogy a Tech Support frontendel kommunikáljon. Ticketek nyitása, menedzselése és zárásával foglalkozik legfőkébb. Emellett a Tech Support adminokat is feljegyzi, egy új ticketkor random adja oda az egyik Adminnak a kérdést. Az adminok erre válaszolni tudnak. Ezek mind API kéréseken keresztül történnek. A rendszer támogatja a ticketek állapotának frissítését, valamint lehetőséget biztosít a kérdések és válaszok könnyed kezelésére API kérés segítségével.
+The main purpose is to communicate with the Tech Support frontend. It primarily handles the creation, management, and closure of support tickets. Additionally, it keeps track of Tech Support admins. When a new ticket is created, it is randomly assigned to one of the admins. Admins can then respond to the assigned tickets. All of this happens via API requests. The system supports updating the status of tickets and provides an easy way to handle questions and answers through API calls.
 
-## Telepítés
+## Installation
 
-1. Klónozd a repót:
+1. Clone the repository:
     ```bash
     git clone https://github.com/YoSlurP/TechBackend.git
     ```
 
-2. Lépj be a mappába:
+2. Navigate into the directory:
     ```bash
     cd TechBackend
     ```
 
-3. Telepítsd a szükséges függőségeket:
+3. Install the required dependencies:
     ```bash
     npm install
     ```
 
-## Fájlstruktúra
+## File Structure
 
-- **controllers/**: Az alkalmazás vezérlői, amelyek az üzleti logikát kezelik.
-- **errors/**: Hibakezelő funkciók.
-- **middlewares/**: Köztes rétegek, például autentikáció vagy naplózás.
-- **routes/**: Az alkalmazás API útvonalai.
-- **services/**: Az üzleti logikát támogató szolgáltatások.
+- **controllers/**: Contains the application's controllers which handle business logic.
+- **errors/**: Error-handling functions.
+- **middlewares/**: Middleware layers such as authentication or logging.
+- **routes/**: API routes of the application.
+- **services/**: Services that support the business logic.
 
-## Futatás
+## Running
 
-Az alkalmazás futtatásához használd a következő parancsot:
+To run the application, use the following command:
 
 ```bash
 npm start
