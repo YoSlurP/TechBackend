@@ -38,3 +38,8 @@ To run the application, use the following command:
 ```bash
 npm start
 ```
+## Database
+![Database](https://github.com/YoSlurP/TechBackend/blob/main/Database%20diagram.png)
+## C4 model of the backend
+![C4 model](https://github.com/YoSlurP/TechBackend/blob/main/C4model.png)
+
