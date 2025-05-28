@@ -1,7 +1,8 @@
 # TechBackend
 
 This project is a **Node.js + Express** based REST API backend for handling messages, responses, and administration. The database connection is made through **MySQL**.
-[Techsupport frontend](https://github.com/balhun/techsupport)
+
+Frontend Repository link: [https://github.com/balhun/techsupport](https://github.com/balhun/techsupport)
 
 ## 📦 Requirements
 
@@ -21,6 +22,11 @@ DB_DATABASE=techbackend
 ## 🚀 Installation
 
 1. Clone or extract the project.
+
+```bash
+git clone https://github.com/YoSlurP/TechBackend.git
+```
+
 2. Install dependencies:
 
 ```bash
@@ -65,20 +71,16 @@ TechBackend/
 
 ### Messages
 
-- `GET /uzenetek` – Retrieve all messages
-- `POST /uzenetek` – Create a new message
-- `DELETE /uzenetek/:id` – Delete a message
-
-### Responses
-
-- `POST /valaszok/:id` – Add a response to a message
+- `GET /uzenetek` – `headers: x-user-id` - Retrieve all messages
+- `GET /uzenetek/:id` - `params: uzenetek id` – `headers: x-user-id` – Get a specific message using message and user id.
+- `POST /uzenetek` – `headers: x-user-id` – Sends a message to a randomly selected admin.
 
 ### Admin
 
-- `POST /admin/login` – Admin login
-- `GET /admin/uzenetek` – List messages with admin privileges
+- `GET /admin` – `headers: x-user-id` – Checks if the logged in user is an admin.
+- `GET /admin/uzenetek` – `headers: x-user-id` – Gets all the messages the admin got.
+- `POST /admin/valaszok/:id` – `headers: x-user-id` – `params:uzenet id` - Sends an answer to the message using it's id.
 
-> Admin privileges require JWT-based authentication (token in the `Authorization` header).
 
 ## 🧭 C4 Model
 
@@ -110,6 +112,6 @@ Main tables:
 
 ## 📌 Notes
 
-- `middlewares/adminAuth.js` handles admin authentication based on JWT token.
+- `middlewares/adminAuth.js` handles admin authentication.
 - `middlewares/errorHandler.js` is a global error handler.
 - The connection is managed by `connection.js` using the `mysql2/promise` library.
