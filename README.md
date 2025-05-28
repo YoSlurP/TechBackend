@@ -1,4 +1,4 @@
-# Tech Support – Under Development
+# Tech Support
 
 This is the backend for the Tech Support website, developed in JavaScript. The goal of this project is to provide core backend functionalities such as data handling, API routes, and middleware.
 
